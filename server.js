@@ -1,5 +1,11 @@
 const express = require("express");
 
-const App = express();
+const app = express();
 
-App.listen(3000);
+const authRouter = require("./Routes/Auths");
+const projectRouter = require("./Routes/Project");
+
+app.use(authRouter);
+app.use(projectRouter);
+
+app.listen(5000);
