@@ -1,24 +1,37 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const app = express();
-const sequelize = require("./Util/db");
+const PORT = process.env.PORT || 5000;
 
 const authRouter = require("./Routes/Auths");
 const projectRouter = require("./Routes/Project");
 
+const app = express();
+
+// allowing cross origin resource sharing
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Methods", "GET,PUT,PATCH,DELETE,POST,HEAD");
+  res.header("Access-Control-Expose-Headers", "Connect-Length");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Accept,Authorizations,Content-type,X-requested-with,Range"
+  );
+  if (req.method === "OPTIONS") {
+    return res.send(200);
+  } else {
+    return next();
+  }
+});
+
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(authRouter);
 app.use(projectRouter);
 
-// sequelize
-//   .sync()
-//   .then((result) => {
-//     console.log(result);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
-
-app.listen(5000);
+app.listen(PORT, () => {
+  console.log(`server is running on port ${PORT}`);
+});
