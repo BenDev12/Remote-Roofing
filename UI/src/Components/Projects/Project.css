@@ -1,0 +1,39 @@
+.add-project {
+  box-sizing: border-box;
+  box-shadow: 1px 2px 3px #ccc;
+  border-radius: 15px;
+  width: 50%;
+  margin: 10px auto;
+
+  height: 50vh;
+}
+.form-group {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.input-control {
+  margin: 10px auto;
+  padding: 8px;
+  justify-items: center;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #8d8d8d;
+  border-color: #8d8d8d;
+}
+
+.sendButton {
+  float: right;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid #8d8d8d;
+  color: #8d8d8d;
+}
+.submitSection {
+  margin: 20px auto;
+  width: 80%;
+}
