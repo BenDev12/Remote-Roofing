@@ -1,12 +1,13 @@
 const Sequelize = require("sequelize");
 
-const sequelize = require("../Util/db");
+const sequelize = require("../Util/dbConnection");
 
 const Task = sequelize.define("task", {
   id: {
     type: Sequelize.INTEGER,
     autoIncreament: true,
     alloNull: false,
+    primaryKey: true,
   },
   name: {
     type: Sequelize.STRING,
@@ -19,4 +20,4 @@ const Task = sequelize.define("task", {
   },
 });
 
-modules.exports = task;
+module.exports = Task;

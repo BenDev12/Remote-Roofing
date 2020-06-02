@@ -1,6 +1,5 @@
 const Sequelize = require("sequelize");
-
-const sequelize = require("../Util/db");
+const sequelize = require("../Util/dbConnection");
 
 const Project = sequelize.define("project", {
   id: {
@@ -10,11 +9,11 @@ const Project = sequelize.define("project", {
     primaryKey: true,
   },
   name: {
-    type: sequelize.STRING,
+    type: Sequelize.STRING,
   },
   body: {
-    type: sequelize.STRING,
+    type: Sequelize.STRING,
   },
 });
 
-modules.exports = product;
+module.exports = Project;
