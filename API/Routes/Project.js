@@ -3,9 +3,9 @@ const projectController = require("../Controllers/ProjectController");
 
 const router = express.Router();
 
-router.get("/AddProject", projectController.addProject);
+router.get("/createProject", projectController.createProject);
 
-router.get("/AddTask", projectController.addTask);
+router.get("/createTask", projectController.createTask);
 
 router.get("/fetchProject", projectController.fetchProject);
 
