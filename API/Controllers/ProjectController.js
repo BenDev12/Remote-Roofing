@@ -1,42 +1,22 @@
-// const Project = require("../Modals/Project")
-// const Task = require("../Modals/Task")
+const Sequelize = require("sequelize");
 
+const sequelize = require("../Util/dbConnection");
+
+const Project = require("../Models/Project");
+const Task = require("../Models/Task");
+
+Project.sync();
 exports.createProject = (req, res, next) => {
   const name = req.body.name;
   const body = req.body.body;
   const status = req.body.status;
-
-  // Project.create({
-  //   name: name,
-  //   body: body,
-  //   status: status,
-  // })
-  //   .then((result) => {
-  //     console.log(result);
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
 };
-
+Task.sync();
 exports.createTask = (req, res, next) => {
   const name = req.body.name;
   const description = req.body.description;
   const score = req.body.score;
   const status = req.body.status;
-
-  // Task.create({
-  //   name: name,
-  //   description: description,
-  //   status: status,
-  //   score: score,
-  // })
-  //   .then((result) => {
-  //     console.log(result);
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
 };
 exports.fetchProject = (req, res, next) => {
   Project.findAll()
