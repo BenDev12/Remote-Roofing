@@ -18,6 +18,9 @@ const Task = sequelize.define("task", {
   score: {
     type: Sequelize.INTEGER,
   },
+  status: {
+    type: Sequelize.BOOLEAN,
+  },
 });
 
 module.exports = Task;

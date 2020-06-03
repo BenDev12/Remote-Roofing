@@ -14,6 +14,9 @@ const Project = sequelize.define("project", {
   body: {
     type: Sequelize.STRING,
   },
+  status: {
+    type: Sequelize.BOOLEAN,
+  },
 });
 
 module.exports = Project;
