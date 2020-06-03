@@ -5,9 +5,9 @@ const sequelize = require("../Util/dbConnection");
 const Task = sequelize.define("task", {
   id: {
     type: Sequelize.INTEGER,
-    autoIncreament: true,
-    alloNull: false,
+
     primaryKey: true,
+    autoIncrement: true,
   },
   name: {
     type: Sequelize.STRING,

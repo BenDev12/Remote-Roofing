@@ -5,20 +5,17 @@ const sequelize = require("../Util/dbConnection");
 const User = sequelize.define("user", {
   id: {
     type: Sequelize.INTEGER,
-    autoIncreament: true,
-    allowNull: false,
     primaryKey: true,
-  },
-  email: {
-    type: Sequelize.STRING,
+    autoIncrement: true,
   },
   surname: {
     type: Sequelize.STRING,
-    allowNull: false,
   },
   name: {
     type: Sequelize.STRING,
   },
+  email: {
+    type: Sequelize.STRING,
+  },
 });
-
 module.exports = User;

@@ -4,9 +4,9 @@ const sequelize = require("../Util/dbConnection");
 const Project = sequelize.define("project", {
   id: {
     type: Sequelize.INTEGER,
-    autoIncreament: true,
-    allowNull: false,
     primaryKey: true,
+    autoIncrement: true,
+    allowNull: false,
   },
   name: {
     type: Sequelize.STRING,
