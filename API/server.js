@@ -39,7 +39,7 @@ app.use(projectRouter);
 
 Project.belongsTo(User);
 Task.belongsTo(Project, { constrain: true, onDelet: "CASCADE" });
-User.hasMany(Project);
+Project.hasMany(Task);
 
 databaseconection
   .sync()
