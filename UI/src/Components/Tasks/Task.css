@@ -1,0 +1,22 @@
+.add-task {
+  display: flex;
+
+  height: 40vh;
+  width: 25%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form-control {
+  width: 85%;
+  padding: 6px;
+}
+
+.add-task-button {
+  width: 6rem;
+  height: 2rem;
+  color: #8d8d8d;
+  background-color: white;
+}
