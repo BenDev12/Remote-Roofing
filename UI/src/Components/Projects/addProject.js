@@ -6,8 +6,12 @@ export class Project extends Component {
     project: {
       name: "",
       body: "",
-      status: "",
-      isComplete: false,
+      status: {
+        active: false,
+        inactive: false,
+        declined: false,
+        completed: false,
+      },
     },
   };
 
