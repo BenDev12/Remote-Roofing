@@ -5,6 +5,10 @@ const PORT = process.env.PORT || 5000;
 
 const authRouter = require("./Routes/Auths");
 const projectRouter = require("./Routes/Project");
+const databaseconection = require("./Util/dbConnection");
+const Project = require("./Models/Project");
+const Task = require("./Models/Task");
+const User = require("./Models/User");
 
 const app = express();
 
@@ -31,6 +35,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(authRouter);
 app.use(projectRouter);
+// creating associations
+
+Project.belongsTo(User);
+Task.belongsTo(Project, { constrain: true, onDelet: "CASCADE" });
+User.hasMany(Project);
+
+databaseconection
+  .sync()
+  .then((result) => {
+    console.log("Database connection sucessful");
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
